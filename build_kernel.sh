@@ -48,13 +48,15 @@ fi
 TARGET_LOCALE="vzw"
 
 #uncomment to add custom version string
-#export KBUILD_BUILD_VERSION="nubernel-EC05_v0.0.0"
+export KBUILD_BUILD_VERSION="Blacktacular"
 DEFCONFIG_STRING=victory_8G_defconfig
 
 #TOOLCHAIN=`pwd`/toolchains/android-toolchain-4.4.3/bin
 #TOOLCHAIN_PREFIX=arm-linux-androideabi-
-TOOLCHAIN=/usr/local/toolchain/arm-2009q3/bin
-TOOLCHAIN_PREFIX=arm-none-linux-gnueabi-
+#TOOLCHAIN=/usr/local/toolchain/arm-2009q3/bin
+#TOOLCHAIN_PREFIX=arm-none-linux-gnueabi-
+TOOLCHAIN=~/myandroid/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin
+TOOLCHAIN_PREFIX=arm-eabi-
 
 KERNEL_BUILD_DIR=`pwd`/Kernel
 ANDROID_OUT_DIR=`pwd`/Android/out/target/product/SPH-D700

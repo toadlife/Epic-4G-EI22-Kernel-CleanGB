@@ -820,11 +820,11 @@ service userscript /system/bin/sh /bin/userscript.sh
 	oneshot
 
 # Enabling this will make stock Samsung bootanimations fail
-#service bootanim /system/bin/bootanimation
-#	user graphics
-#	group graphics
-#	critical
-#	oneshot
+service bootanim /system/bin/bootanimation
+	user graphics
+	group graphics
+	critical
+	oneshot
 
 service zygote /system/bin/app_process -Xzygote /system/bin --zygote --start-system-server
     socket zygote stream 666
@@ -839,11 +839,11 @@ service media /system/bin/mediaserver
     ioprio rt 4
 
 
-service samsungani /system/bin/samsungani
-    user graphics
-    group graphics
-    disabled
-    oneshot
+#service samsungani /system/bin/samsungani
+#    user graphics
+#    group graphics
+#    disabled
+#    oneshot
 
 
 service playsound /system/bin/playsound

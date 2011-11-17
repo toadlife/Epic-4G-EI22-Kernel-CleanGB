@@ -133,7 +133,7 @@ on fs
     # mount yaffs2 mtd@userdata /data nosuid nodev
     # mount yaffs2 mtd@cache /cache nosuid nodev
     mount rfs /dev/block/stl9 /system check=no
-	mount ext4 /dev/block/stl9 /system noatime nodiratime errors=continue
+    mount ext4 /dev/block/stl9 /system noatime nodiratime errors=continue data=journal barrier=1
     # Temp add for FY -> GB update problem 
     # After update GB, need to remove
     copy /tmp/linker /system/bin/linker
@@ -169,7 +169,7 @@ on fs
     #mkdir /dbdata
   #SEC_DMCRYPT crypt flag added
     mount rfs /dev/block/stl10 /data nosuid nodev crypt check=no
-    mount ext4 /dev/block/stl10 /data nosuid nodev crypt noatime nodiratime	
+    mount ext4 /dev/block/stl10 /data nosuid nodev crypt noatime nodiratime data=journal barrier=1	
     #symlink /data /dbdata
     #mount rfs /dev/block/stl10 /data nosuid nodev check=no
     chown system system /data
@@ -185,7 +185,7 @@ on fs
     chown system system /data/db-journal
     chmod 0777 /data/db-journal
     mount rfs /dev/block/stl11 /cache nosuid nodev check=no
-	mount ext4 /dev/block/stl11 /cache nosuid nodev noatime nodiratime errors=continue nobh data=writeback barrier=0 noauto_da_alloc
+    mount ext4 /dev/block/stl11 /cache nosuid nodev noatime nodiratime errors=continue data=journal barrier=1
     mkdir /mnt/.lfs 0755 root root
     mount j4fs /dev/block/stl6 /mnt/.lfs
     insmod /lib/modules/param.ko

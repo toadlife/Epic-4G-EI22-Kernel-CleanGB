@@ -70,9 +70,9 @@
 #define DHDSDIO_MEM_DUMP_FNAME         "mem_dump"
 #endif
 
-#define TXQLEN		16384	/* bulk tx queue length */
-#define TXHI		(TXQLEN - 256)	/* turn on flow control above TXHI */
-#define TXLOW		(TXHI - 256)	/* turn off flow control below TXLOW */
+#define TXQLEN		4096	/* bulk tx queue length */
+#define TXHI		(TXQLEN - 512)	/* turn on flow control above TXHI */
+#define TXLOW		(TXHI - 512)	/* turn off flow control below TXLOW */
 #define PRIOMASK	7
 
 #define TXRETRIES	2	/* # of retries for tx frames */
